@@ -20,6 +20,11 @@ http.createServer((req, res) => {
         target: 'https://104.198.1.41'
       });
       break;
+    case 'node.thepan.co':
+      proxy.web(req, res, {
+        target: 'http://127.0.0.1:8080'
+      });
+    break;
     default:
       res.writeHead(200, {
         'Content-Type': 'text/plain'
@@ -27,4 +32,3 @@ http.createServer((req, res) => {
       res.end('Welcome to my server!');
   }
 }).listen(80);
-
