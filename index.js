@@ -6,7 +6,7 @@ proxy.on('error', (err, req, res) => {
   res.writeHead(500, {
     'Content-Type': 'text/plain'
   });
-  res.end('Something went wrong. And we are reporting a custom error message.'+err);
+  res.end('Something went wrong. And we are reporting a custom error message.' + err);
 });
 
 http.createServer((req, res) => {
@@ -24,7 +24,7 @@ http.createServer((req, res) => {
       proxy.web(req, res, {
         target: 'http://127.0.0.1:8080'
       });
-    break;
+      break;
     default:
       res.writeHead(200, {
         'Content-Type': 'text/plain'
